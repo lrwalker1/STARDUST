@@ -1,0 +1,32 @@
+/control/verbose 1
+
+/geometry/source PLDetCon_BGO.tg
+
+/physics_lists/select QGSP_BIC_HP
+#/physics_lists/factory/addRadioactiveDecay 
+# cmd below must be run after the cmds above
+/run/initialize
+
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+/process/had/rdm/nucleusLimits 133 133 54 55
+
+# double check if radiactive decay is enabled
+/process/list Decay
+
+# split decay chain to multiple events based on time intervals between decays
+#/grdm/setTimeWindow 5E04 s
+
+# Define Xe133m
+/gps/particle ion
+/gps/ion 54 133 0 233.22115
+#/gps/ionLvl 54 133 0 1
+# default kinetic energy set by gps is 1 MeV,
+# must be set to zero if your ion decays at rest
+/gps/energy 0
+
+#/tracking/verbose 2
+# show how a track is passed between the stacking and tracking managers
+# /event/verbose 2
+/analysis/setFileName output2.root
+# one event is enough to demonstrate the process
+/run/beamOn 10000000
