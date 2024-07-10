@@ -1,0 +1,218 @@
+:volu world BOX 1*m 1*m 1*m G4_Galactic
+:vis world OFF
+
+:solid DSSD(S) BOX 5*cm 5*cm 150*um
+:solid target(S) TUBE 0*cm 1*cm 0.936*um
+:solid mysph SPHERE 18.99500*cm 19*cm 0 360 0 360
+:solid PL_HPGE_crystal(S) TUBE 0*cm 2.5*cm 0.85*cm
+:solid Al_housing TUBE 25.3*mm 30*mm 15*cm
+:solid Be_window TUBE 0*mm 25.3*mm 0.25*mm
+:solid Cold_finger TUBE 0*mm 25*mm 20*cm
+:solid Al_tube TUBE 25.6*mm 53.75*mm 105.5*mm
+:solid VAC_tube TUBE 25.9*mm 53.45*mm 104.9*mm
+:solid BGO_housing SUBTRACTION Al_tube VAC_tube r000 0 0 0
+:solid center SPHERE 0*cm 0.001*cm 0 360 0 360
+:solid BGO_c TUBE 0*mm 13.475*mm 104.6*mm
+:solid BGO_1 UNION center BGO_c r000 39.675*mm 0*mm 0*mm
+:solid BGO_2 UNION BGO_1 BGO_c r000 19.8375*mm 34.359557895*mm 0*cm
+:solid BGO_3 UNION BGO_2 BGO_c r000 -19.8375*mm 34.359557895*mm 0*cm
+:solid BGO_4 UNION BGO_3 BGO_c r000 -19.8375*mm -34.359557895*mm 0*cm
+:solid BGO_5 UNION BGO_4 BGO_c r000 19.8375*mm -34.359557895*mm 0*cm
+:solid BGO_6 SUBTRACTION BGO_5 center r000 0*mm 0*mm 0*mm
+:solid BGO_crystal(S) UNION BGO_6 BGO_c r000 -39.675*mm 0*mm 0*mm
+
+:volu DSSD(S) DSSD(S) G4_Si
+:volu target(S) target(S) G4_Li
+:volu mysph mysph G4_MYLAR
+:volu PL_HPGE_crystal(S) PL_HPGE_crystal(S) G4_Ge
+:volu Al_housing Al_housing G4_Al
+:volu Be_window Be_window G4_Be
+:volu Cold_finger Cold_finger G4_Cu
+:volu BGO_housing BGO_housing G4_Al
+:volu BGO_crystal(S) BGO_crystal(S) G4_BGO
+
+:rotm r000 0 0 0
+:place mysph 10000 world r000 0*cm 0*cm 0*cm
+
+:rotm r001 0.0 90.0 0.0
+:place PL_HPGE_crystal(S) 1 world r001 -20.0*cm 0.0*cm 0.0*cm
+:place Al_housing 201 world r001 -34.07*cm 0.0*cm 0.0*cm
+:place Be_window 301 world r001 -19.095*cm 0.0*cm 0.0*cm
+:place Cold_finger 401 world r001 -40.85*cm 0.0*cm 0.0*cm
+:place BGO_housing 501 world r001 -29.62*cm 0.0*cm 0.0*cm
+:place BGO_crystal(S) 601 world r001 -29.68*cm 0.0*cm 0.0*cm
+
+:rotm r002 -45.0 35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 2 world r002 -11.547*cm -11.547*cm 11.547*cm
+:place Al_housing 202 world r002 -19.67*cm -19.67*cm 19.67*cm
+:place Be_window 302 world r002 -11.025*cm -11.025*cm 11.025*cm
+:place Cold_finger 402 world r002 -23.585*cm -23.585*cm 23.585*cm
+:place BGO_housing 502 world r002 -17.101*cm -17.101*cm 17.101*cm
+:place BGO_crystal(S) 602 world r002 -17.136*cm -17.136*cm 17.136*cm
+
+:rotm r003 0.0 45.0 0.0
+:place PL_HPGE_crystal(S) 3 world r003 -14.142*cm 0.0*cm 14.142*cm
+:place Al_housing 203 world r003 -24.091*cm 0.0*cm 24.091*cm
+:place Be_window 303 world r003 -13.502*cm 0.0*cm 13.502*cm
+:place Cold_finger 403 world r003 -28.885*cm 0.0*cm 28.885*cm
+:place BGO_housing 503 world r003 -20.945*cm 0.0*cm 20.945*cm
+:place BGO_crystal(S) 603 world r003 -20.987*cm 0.0*cm 20.987*cm
+
+:rotm r004 45.0 35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 4 world r004 -11.547*cm 11.547*cm 11.547*cm
+:place Al_housing 204 world r004 -19.67*cm 19.67*cm 19.67*cm
+:place Be_window 304 world r004 -11.025*cm 11.025*cm 11.025*cm
+:place Cold_finger 404 world r004 -23.585*cm 23.585*cm 23.585*cm
+:place BGO_housing 504 world r004 -17.101*cm 17.101*cm 17.101*cm
+:place BGO_crystal(S) 604 world r004 -17.136*cm 17.136*cm 17.136*cm
+
+:rotm r005 90.0 45.0 0.0
+:place PL_HPGE_crystal(S) 5 world r005 -14.142*cm 14.142*cm 0.0*cm
+:place Al_housing 205 world r005 -24.091*cm 24.091*cm 0.0*cm
+:place Be_window 305 world r005 -13.502*cm 13.502*cm 0.0*cm
+:place Cold_finger 405 world r005 -28.885*cm 28.885*cm 0.0*cm
+:place BGO_housing 505 world r005 -20.945*cm 20.945*cm 0.0*cm
+:place BGO_crystal(S) 605 world r005 -20.987*cm 20.987*cm 0.0*cm
+
+:rotm r006 135.0 35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 6 world r006 -11.547*cm 11.547*cm -11.547*cm
+:place Al_housing 206 world r006 -19.67*cm 19.67*cm -19.67*cm
+:place Be_window 306 world r006 -11.025*cm 11.025*cm -11.025*cm
+:place Cold_finger 406 world r006 -23.585*cm 23.585*cm -23.585*cm
+:place BGO_housing 506 world r006 -17.101*cm 17.101*cm -17.101*cm
+:place BGO_crystal(S) 606 world r006 -17.136*cm 17.136*cm -17.136*cm
+
+:rotm r007 0.0 135.0 0.0
+:place PL_HPGE_crystal(S) 7 world r007 -14.142*cm 0.0*cm -14.142*cm
+:place Al_housing 207 world r007 -24.091*cm 0.0*cm -24.091*cm
+:place Be_window 307 world r007 -13.502*cm 0.0*cm -13.502*cm
+:place Cold_finger 407 world r007 -28.885*cm 0.0*cm -28.885*cm
+:place BGO_housing 507 world r007 -20.945*cm 0.0*cm -20.945*cm
+:place BGO_crystal(S) 607 world r007 -20.987*cm 0.0*cm -20.987*cm
+
+:rotm r008 -135.0 35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 8 world r008 -11.547*cm -11.547*cm -11.547*cm
+:place Al_housing 208 world r008 -19.67*cm -19.67*cm -19.67*cm
+:place Be_window 308 world r008 -11.025*cm -11.025*cm -11.025*cm
+:place Cold_finger 408 world r008 -23.585*cm -23.585*cm -23.585*cm
+:place BGO_housing 508 world r008 -17.101*cm -17.101*cm -17.101*cm
+:place BGO_crystal(S) 608 world r008 -17.136*cm -17.136*cm -17.136*cm
+
+:rotm r009 -90.0 45.0 0.0
+:place PL_HPGE_crystal(S) 9 world r009 -14.142*cm -14.142*cm 0.0*cm
+:place Al_housing 209 world r009 -24.091*cm -24.091*cm 0.0*cm
+:place Be_window 309 world r009 -13.502*cm -13.502*cm 0.0*cm
+:place Cold_finger 409 world r009 -28.885*cm -28.885*cm 0.0*cm
+:place BGO_housing 509 world r009 -20.945*cm -20.945*cm 0.0*cm
+:place BGO_crystal(S) 609 world r009 -20.987*cm -20.987*cm 0.0*cm
+
+:rotm r010 45.0 0.0 0.0
+:place PL_HPGE_crystal(S) 10 world r010 0.0*cm 14.142*cm 14.142*cm
+:place Al_housing 210 world r010 0.0*cm 24.091*cm 24.091*cm
+:place Be_window 310 world r010 0.0*cm 13.502*cm 13.502*cm
+:place Cold_finger 410 world r010 0.0*cm 28.885*cm 28.885*cm
+:place BGO_housing 510 world r010 0.0*cm 20.945*cm 20.945*cm
+:place BGO_crystal(S) 610 world r010 0.0*cm 20.987*cm 20.987*cm
+
+:rotm r011 0.0 0.0 0.0
+:place PL_HPGE_crystal(S) 11 world r011 0.0*cm 0.0*cm 20.0*cm
+:place Al_housing 211 world r011 0.0*cm 0.0*cm 34.07*cm
+:place Be_window 311 world r011 0.0*cm 0.0*cm 19.095*cm
+:place Cold_finger 411 world r011 0.0*cm 0.0*cm 40.85*cm
+:place BGO_housing 511 world r011 0.0*cm 0.0*cm 29.62*cm
+:place BGO_crystal(S) 611 world r011 0.0*cm 0.0*cm 29.68*cm
+
+:rotm r012 315.0 0.0 0.0
+:place PL_HPGE_crystal(S) 12 world r012 0.0*cm -14.142*cm 14.142*cm
+:place Al_housing 212 world r012 0.0*cm -24.091*cm 24.091*cm
+:place Be_window 312 world r012 0.0*cm -13.502*cm 13.502*cm
+:place Cold_finger 412 world r012 0.0*cm -28.885*cm 28.885*cm
+:place BGO_housing 512 world r012 0.0*cm -20.945*cm 20.945*cm
+:place BGO_crystal(S) 612 world r012 0.0*cm -20.987*cm 20.987*cm
+
+:rotm r013 225.0 0.0 0.0
+:place PL_HPGE_crystal(S) 13 world r013 0.0*cm -14.142*cm -14.142*cm
+:place Al_housing 213 world r013 0.0*cm -24.091*cm -24.091*cm
+:place Be_window 313 world r013 0.0*cm -13.502*cm -13.502*cm
+:place Cold_finger 413 world r013 0.0*cm -28.885*cm -28.885*cm
+:place BGO_housing 513 world r013 0.0*cm -20.945*cm -20.945*cm
+:place BGO_crystal(S) 613 world r013 0.0*cm -20.987*cm -20.987*cm
+
+:rotm r014 180.0 0.0 0.0
+:place PL_HPGE_crystal(S) 14 world r014 0.0*cm 0.0*cm -20.0*cm
+:place Al_housing 214 world r014 0.0*cm 0.0*cm -34.07*cm
+:place Be_window 314 world r014 0.0*cm 0.0*cm -19.095*cm
+:place Cold_finger 414 world r014 0.0*cm 0.0*cm -40.85*cm
+:place BGO_housing 514 world r014 0.0*cm 0.0*cm -29.62*cm
+:place BGO_crystal(S) 614 world r014 0.0*cm 0.0*cm -29.68*cm
+
+:rotm r015 135.0 0.0 0.0
+:place PL_HPGE_crystal(S) 15 world r015 0.0*cm 14.142*cm -14.142*cm
+:place Al_housing 215 world r015 0.0*cm 24.091*cm -24.091*cm
+:place Be_window 315 world r015 0.0*cm 13.502*cm -13.502*cm
+:place Cold_finger 415 world r015 0.0*cm 28.885*cm -28.885*cm
+:place BGO_housing 515 world r015 0.0*cm 20.945*cm -20.945*cm
+:place BGO_crystal(S) 615 world r015 0.0*cm 20.987*cm -20.987*cm
+
+:rotm r016 -45.0 -35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 16 world r016 11.547*cm -11.547*cm 11.547*cm
+:place Al_housing 216 world r016 19.67*cm -19.67*cm 19.67*cm
+:place Be_window 316 world r016 11.025*cm -11.025*cm 11.025*cm
+:place Cold_finger 416 world r016 23.585*cm -23.585*cm 23.585*cm
+:place BGO_housing 516 world r016 17.101*cm -17.101*cm 17.101*cm
+:place BGO_crystal(S) 616 world r016 17.136*cm -17.136*cm 17.136*cm
+
+:rotm r017 0.0 315.0 0.0
+:place PL_HPGE_crystal(S) 17 world r017 14.142*cm 0.0*cm 14.142*cm
+:place Al_housing 217 world r017 24.091*cm 0.0*cm 24.091*cm
+:place Be_window 317 world r017 13.502*cm 0.0*cm 13.502*cm
+:place Cold_finger 417 world r017 28.885*cm 0.0*cm 28.885*cm
+:place BGO_housing 517 world r017 20.945*cm 0.0*cm 20.945*cm
+:place BGO_crystal(S) 617 world r017 20.987*cm 0.0*cm 20.987*cm
+
+:rotm r018 45.0 -35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 18 world r018 11.547*cm 11.547*cm 11.547*cm
+:place Al_housing 218 world r018 19.67*cm 19.67*cm 19.67*cm
+:place Be_window 318 world r018 11.025*cm 11.025*cm 11.025*cm
+:place Cold_finger 418 world r018 23.585*cm 23.585*cm 23.585*cm
+:place BGO_housing 518 world r018 17.101*cm 17.101*cm 17.101*cm
+:place BGO_crystal(S) 618 world r018 17.136*cm 17.136*cm 17.136*cm
+
+:rotm r019 135.0 -35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 19 world r019 11.547*cm 11.547*cm -11.547*cm
+:place Al_housing 219 world r019 19.67*cm 19.67*cm -19.67*cm
+:place Be_window 319 world r019 11.025*cm 11.025*cm -11.025*cm
+:place Cold_finger 419 world r019 23.585*cm 23.585*cm -23.585*cm
+:place BGO_housing 519 world r019 17.101*cm 17.101*cm -17.101*cm
+:place BGO_crystal(S) 619 world r019 17.136*cm 17.136*cm -17.136*cm
+
+:rotm r020 0.0 225.0 0.0
+:place PL_HPGE_crystal(S) 20 world r020 14.142*cm 0.0*cm -14.142*cm
+:place Al_housing 220 world r020 24.091*cm 0.0*cm -24.091*cm
+:place Be_window 320 world r020 13.502*cm 0.0*cm -13.502*cm
+:place Cold_finger 420 world r020 28.885*cm 0.0*cm -28.885*cm
+:place BGO_housing 520 world r020 20.945*cm 0.0*cm -20.945*cm
+:place BGO_crystal(S) 620 world r020 20.987*cm 0.0*cm -20.987*cm
+
+:rotm r021 -135.0 -35.26438968275467 0.0
+:place PL_HPGE_crystal(S) 21 world r021 11.547*cm -11.547*cm -11.547*cm
+:place Al_housing 221 world r021 19.67*cm -19.67*cm -19.67*cm
+:place Be_window 321 world r021 11.025*cm -11.025*cm -11.025*cm
+:place Cold_finger 421 world r021 23.585*cm -23.585*cm -23.585*cm
+:place BGO_housing 521 world r021 17.101*cm -17.101*cm -17.101*cm
+:place BGO_crystal(S) 621 world r021 17.136*cm -17.136*cm -17.136*cm
+
+:rotm r800 0 0 45
+:place DSSD(S) 801 world r800 0*cm 0*cm -4*cm
+:place DSSD(S) 802 world r800 0*cm 0*cm 4*cm
+
+:color PL_HPGE_crystal(S) 0.9 0.9 0 0.5 1
+:color Al_housing 0.9 0.9 0.9 0.4
+:color Be_window 0. 0.9 0. 1
+:color Cold_finger 0.722 0.451 0.2 1
+:color DSSD(S) 0.9 0.9 0 0.5
+:color target(S) 1 0 0
+:color mysph 0.56 1 0.98 0.3
+:color BGO_housing 0.9 0.9 0.9 0.4
+:color BGO_crystal(S) 0.5 0 0.5 0.6
+

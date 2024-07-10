@@ -1,0 +1,56 @@
+:volu world BOX 1*m 1*m 1*m G4_Galactic
+:vis world OFF
+
+:solid DSSD(S) BOX 5*cm 5*cm 150*um
+:solid target(S) TUBE 0*cm 1*cm 0.936*um
+:solid mysph SPHERE 18.99500*cm 19*cm 0 360 0 360
+:solid PL_HPGE_crystal(S) TUBE 0*cm 2.5*cm 0.85*cm
+:solid Al_housing TUBE 25.3*mm 30*mm 15*cm
+:solid Be_window TUBE 0*mm 25.3*mm 0.25*mm
+:solid Cold_finger TUBE 0*mm 25*mm 20*cm
+:solid Al_tube TUBE 25.6*mm 53.75*mm 105.5*mm
+:solid VAC_tube TUBE 25.9*mm 53.45*mm 104.9*mm
+:solid BGO_housing SUBTRACTION Al_tube VAC_tube r000 0 0 0
+:solid center SPHERE 0*cm 0.001*cm 0 360 0 360
+:solid BGO_c TUBE 0*mm 13.475*mm 104.6*mm
+:solid BGO_1 UNION center BGO_c r000 39.675*mm 0*mm 0*mm
+:solid BGO_2 UNION BGO_1 BGO_c r000 19.8375*mm 34.359557895*mm 0*cm
+:solid BGO_3 UNION BGO_2 BGO_c r000 -19.8375*mm 34.359557895*mm 0*cm
+:solid BGO_4 UNION BGO_3 BGO_c r000 -19.8375*mm -34.359557895*mm 0*cm
+:solid BGO_5 UNION BGO_4 BGO_c r000 19.8375*mm -34.359557895*mm 0*cm
+:solid BGO_6 SUBTRACTION BGO_5 center r000 0*mm 0*mm 0*mm
+:solid BGO_crystal(S) UNION BGO_6 BGO_c r000 -39.675*mm 0*mm 0*mm
+
+:volu DSSD(S) DSSD(S) G4_Si
+:volu target(S) target(S) G4_Li
+:volu mysph mysph G4_MYLAR
+:volu PL_HPGE_crystal(S) PL_HPGE_crystal(S) G4_Ge
+:volu Al_housing Al_housing G4_Al
+:volu Be_window Be_window G4_Be
+:volu Cold_finger Cold_finger G4_Cu
+:volu BGO_housing BGO_housing G4_Al
+:volu BGO_crystal(S) BGO_crystal(S) G4_BGO
+
+:rotm r000 0 0 0
+:place mysph 10000 world r000 0*cm 0*cm 0*cm
+:place DSSD(S) 21 world r000 0*cm 0*cm 3*cm
+:place DSSD(S) 22 world r000 0*cm 0*cm -3*cm
+
+:rotm r011 0.0 0.0 0.0
+:place PL_HPGE_crystal(S) 11 world r011 0.0*cm 0.0*cm 20.0*cm
+:place Al_housing 211 world r011 0.0*cm 0.0*cm 34.07*cm
+:place Be_window 311 world r011 0.0*cm 0.0*cm 19.095*cm
+:place Cold_finger 411 world r011 0.0*cm 0.0*cm 40.85*cm
+:place BGO_housing 511 world r011 0.0*cm 0.0*cm 29.62*cm
+:place BGO_crystal(S) 611 world r011 0.0*cm 0.0*cm 29.68*cm
+
+:color PL_HPGE_crystal(S) 0.9 0.9 0 0.5 1
+:color Al_housing 0.9 0.9 0.9 0.4
+:color Be_window 0. 0.9 0. 1
+:color Cold_finger 0.722 0.451 0.2 1
+:color DSSD(S) 0.9 0.9 0 0.5
+:color target(S) 1 0 0
+:color mysph 0.4 0.4 0 0.3
+:color BGO_housing 0.9 0.9 0.9 0.4
+:color BGO_crystal(S) 0.5 0 0.5 0.6
+
